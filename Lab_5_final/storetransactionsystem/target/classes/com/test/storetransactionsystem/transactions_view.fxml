@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.test.storetransactionsystem.TransactionsController">
+   <children>
+      <VBox layoutX="1.0" layoutY="3.0">
+         <MenuBar>
+            <Menu text="Create Transaction">
+               <items>
+                  <MenuItem text="Create" onAction="#onTransactionCreateButtonClick"/>
+               </items>
+            </Menu>
+            <Menu text="Configure other tables">
+               <items>
+                  <MenuItem text="Sellers" onAction="#onSellerButtonClick"/>
+               </items>
+			      <items>
+                  <MenuItem text="Products" onAction="#onProductButtonClick"/>
+               </items>
+            </Menu>
+         </MenuBar>
+         <TableView fx:id="tableTransactions" prefHeight="500" prefWidth="1000">
+            <columns>
+               <TableColumn fx:id="idCol" text="Id"/>
+               <TableColumn fx:id="ModelCol" text="Product"/>
+               <TableColumn fx:id="SellerCol" text="Seller"/>
+               <TableColumn fx:id="DateCol" text="Date"/>
+            </columns>
+            <contextMenu>
+               <ContextMenu>
+                  <items>
+                     <MenuItem text="Delete Transaction" onAction="#handleDelete"/>
+                  </items>
+               </ContextMenu>
+            </contextMenu>
+         </TableView>
+      </VBox>
+   </children>
+</AnchorPane>
